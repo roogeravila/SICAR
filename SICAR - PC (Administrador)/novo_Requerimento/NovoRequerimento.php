@@ -50,7 +50,7 @@
       <td width="40%" height=""><span style="color: rgb(52, 71, 76); font-size: 14px;">Faculdade:&nbsp;</span> </td>
       <td><select name="faculdade"> 
     <?php 
-	require '../Config/config_sistema.php';
+	require '../../Config/config_sistema.php'; // sai da pasta novo requerimento /../ e sai da pasta Sicar- PC (Administrador) /../ para poder achar a Pasta Config 
 	$query = mysql_query("SELECT * FROM faculdade");
 	while($esp = mysql_fetch_array($query)) { ?>
  	<option value="<?php echo $esp['id_faculdade']?>"> <?php echo $esp['nome'] ?></option>
