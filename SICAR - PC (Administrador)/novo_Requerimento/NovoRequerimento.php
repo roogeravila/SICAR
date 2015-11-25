@@ -49,13 +49,14 @@
     <tr>
       <td width="40%" height=""><span style="color: rgb(52, 71, 76); font-size: 14px;">Faculdade:&nbsp;</span> </td>
       <td><select name="faculdade"> 
+    <option>Sem Vínculo</option>
     <?php 
-	require '../../Config/config_sistema.php'; // sai da pasta novo requerimento /../ e sai da pasta Sicar- PC (Administrador) /../ para poder achar a Pasta Config 
+	require '/../../Config/config_sistema.php';
 	$query = mysql_query("SELECT * FROM faculdade");
 	while($esp = mysql_fetch_array($query)) { ?>
  	<option value="<?php echo $esp['id_faculdade']?>"> <?php echo $esp['nome'] ?></option>
  	<?php } ?>    
-      </select></td>
+      </select>*</td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Tipo de Requerimento:&nbsp;</td>
@@ -68,31 +69,31 @@
     </tr>
     <tr>
       <td> <span style="color: rgb(52, 71, 76); font-size: 14px;">Nome do Requisitante:&nbsp;</td>
-      <td><input type="text">*</td>
+      <td><input type="text" name="requisitante">*</td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Número de Matrícula:&nbsp;</td>
-      <td><input type="text"></span></td>
+      <td><input type="text" name="matricula"></span></td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Email:&nbsp;</td>
-      <td><input type="text"></span>*</td>
+      <td><input type="text" name="email"></span>*</td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">CPF:&nbsp;</td>
-      <td><input type="text"></span>*</td>
+      <td><input type="text" name="cpf"></span>*</td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Telefone/Celular:&nbsp;</td>
-      <td><input type="text"></span></td>
+      <td><input type="text" name="telefone"></span></td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Descrição/Observação:&nbsp;</td>
-      <td><textarea></textarea>*</td>
+      <td><textarea name="descricao"></textarea>*</td>
     </tr>
     <tr>
       <td>Anexos:</td>
-      <td><input type="file"></td>
+      <td><input type="file" name="anexos"></td>
     </tr>
   </tbody>
 </table>
