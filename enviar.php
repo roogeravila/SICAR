@@ -1,10 +1,10 @@
 ﻿<?php
 //Variaveis
 
-$Faculdade = $_POST['Faculdade'];
+$nome = $_POST['nome'];
 $email = $_POST['email'];
-$telefone = $_POST['telefone'];
-$opcoes = $_POST['escolhas'];
+$Faculdade = $_POST['Faculdade'];
+$Protocolo = $_POST['Protocolo'];
 $mensagem = $_POST['msg'];
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
@@ -32,7 +32,12 @@ $hora_envio = date('H:i:s');
 	}
 	</style>
     <html>
-        <table width='510' border='1' cellpadding='1' cellspacing='1' bgcolor='#CCCCCC'>
+    
+
+
+        // aqui entra o corpo do aqruivo mensagem.html 
+
+    <table width='510' border='1' cellpadding='1' cellspacing='1' bgcolor='#CCCCCC'>
             <tr>
               <td>
 			    <tr>
@@ -73,9 +78,9 @@ $hora_envio = date('H:i:s');
     $headers .= 'From: $nome <$email>';
 	//$headers .= "Bcc: $EmailPadrao\r\n";
 	
-	$enviaremail = mail($destino, $assunto, $arquivo, $headers);
+	$enviaremail = mail($destino, $assunto, $mensagem, $headers);
 	if($enviaremail){
-	$mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
+	$mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O protocolo de acompanhamento será enviado para o e-mail fornecido no formulário";
 	echo " <meta http-equiv='refresh' content='3;URL=contato.php'>";
 	} else {
 	$mgm = "ERRO AO ENVIAR E-MAIL!";
