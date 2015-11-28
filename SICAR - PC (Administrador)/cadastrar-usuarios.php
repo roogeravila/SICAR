@@ -27,7 +27,49 @@ return false;
 <script type="text/javascript" src="js/jquery-1.2.6.pack.js">
 </script><script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
 
-<script type="text/javascript">$(document).ready(function(){	$("#cpf").mask("999.999.999-99");});</script>
+<script>
+function ValidarCPF(Objcpf){
+        var cpf = Objcpf.value;
+        exp = /\.|\-/g
+        cpf = cpf.toString().replace( exp, "" ); 
+        var digitoDigitado = eval(cpf.charAt(9)+cpf.charAt(10));
+        var soma1=0, soma2=0;
+        var vlr =11;
+
+        for(i=0;i<8;i++){
+                soma1+=eval(cpf.charAt(i)*(vlr-1));
+                soma2+=eval(cpf.charAt(i)*vlr);
+                vlr--;
+        }       
+        soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
+        soma2=(((soma2+(2*soma1))*10)%11);
+
+        var digitoGerado=(soma1*10)+soma2;
+        if(digitoGerado!=digitoDigitado)        
+                alert('CPF Invalido!');         
+}
+ </script>
+ 
+ <script type="text/javascript">
+			function FormataCpf(campo, teclapres)
+			{
+				var tecla = teclapres.keyCode;
+				var vr = new String(campo.value);
+				vr = vr.replace(".", "");
+				vr = vr.replace("/", "");
+				vr = vr.replace("-", "");
+				tam = vr.length + 1;
+				if (tecla != 14)
+				{
+					if (tam == 4)
+						campo.value = vr.substr(0, 3) + '.';
+					if (tam == 7)
+						campo.value = vr.substr(0, 3) + '.' + vr.substr(3, 6) + '.';
+					if (tam == 11)
+						campo.value = vr.substr(0, 3) + '.' + vr.substr(3, 3) + '.' + vr.substr(7, 3) + '-' + vr.substr(11, 2);
+				}
+			}
+		</script>
 
 </head>
 <body>
@@ -105,7 +147,7 @@ return false;
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">CPF:&nbsp;</td>
-      <td><input id="cpf" type="text" name="cpf"></span></td>
+      <td><input id="cpf" type="text" name="cpf" onkeyup="FormataCpf(this,event)" onBlur="ValidarCPF(cadastro.cpf);"  maxlength="14"></span></td>
     </tr>
     <tr>
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Telefone/Celular:&nbsp;</td>
