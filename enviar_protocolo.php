@@ -9,11 +9,19 @@ $mensagem = $_POST['msg'];
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
 
+
+		$nome = "Roger";
+        $data_envio = date("d-m-Y");
+        $id_protocolo = 01;
+        $ano = date("Y");
+        $Protocolo = $ano.$id_protocolo; 
+
 // -------------
 
-// Compo E-mail
+// Compor E-mail
 
 	
+
 	$arquivo = "
 	<style type='text/css'>
 	body {
@@ -37,30 +45,22 @@ $hora_envio = date('H:i:s');
 
         // aqui entra o corpo do aqruivo mensagem.html 
 
-    <table width='510' border='1' cellpadding='1' cellspacing='1' bgcolor='#CCCCCC'>
-            <tr>
-              <td>
-			    <tr>
-                 <td width='500'>Nome:$nome</td>
-                </tr>
-                <tr>
-                  <td width='320'>E-mail:<b>$email</b></td>
-	            </tr>
-				<tr>
-                  <td width='320'>Telefone:<b>$telefone</b></td>
-                </tr>
-	       	    <tr>
-                  <td width='320'>Opções:$escolhas</td>
-                </tr>
-				<tr>
-                  <td width='320'>Mensagem:$nome</td>
-                </tr>
-            </td>
-          </tr>  
-          <tr>
-            <td>Este e-mail foi enviado em <b>$data_envio</b> &agrave;s <b>$hora_envio</b></td>
-          </tr>
-        </table>
+        <html>
+        <meta charset="utf-8">
+        <h2> SICAR - Sistema de Cadastro e Acompanhamento de Requisições </h2>
+        
+
+        
+         printf('<h3> Olá  - '".$nome."'<p>Seu Numero de Protocolo é: '".$Protocolo."'</h3><p>Este email foi enviado em '".$data_envio."'') ;
+        
+        
+        
+
+        
+        
+    
+        
+        
     </html>
 	";
 
@@ -81,7 +81,7 @@ $hora_envio = date('H:i:s');
 	$enviaremail = mail($destino, $assunto, $mensagem, $headers);
 	if($enviaremail){
 	$mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O protocolo de acompanhamento será enviado para o e-mail fornecido no formulário";
-	echo " <meta http-equiv='refresh' content='3;URL=contato.php'>";
+	echo " <meta http-equiv='refresh' content='3;URL=NovoRequerimento.php'>";
 	} else {
 	$mgm = "ERRO AO ENVIAR E-MAIL!";
 	echo "";
