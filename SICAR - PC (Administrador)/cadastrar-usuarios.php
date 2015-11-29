@@ -36,9 +36,9 @@ function ValidarCPF(Objcpf){
         var soma1=0, soma2=0;
         var vlr =11;
 
-        for(i=0;i<8;i++){
-                soma1+=eval(cpf.charAt(i)*(vlr-1));
-                soma2+=eval(cpf.charAt(i)*vlr);
+        for(i=0;i<9;i++){
+                soma1+=(cpf.charAt(i)*(vlr-1));
+                soma2+=(cpf.charAt(i)*vlr);
                 vlr--;
         }       
         soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
