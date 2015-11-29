@@ -33,8 +33,14 @@ $senha= $_POST['senha'];
 
 // faz consulta no banco para inserir os dados do usuário
 $query = mysql_query("INSERT INTO usuario(cargo,faculdade,nome,matricula_ufpa,email,cpf,telefone,login,senha) VALUES ('$cargo','$faculdade','$nome','$matricula','$email','$cpf','$telefone','$usuario','$senha')") or die(mysql_error());
-echo "Cadastrado com Sucesso! <br>";
-	echo "<a href='cadastrar-usuarios.php'>Retornar</a>";
+<script type="text/javascript">
+      alert("Usuário Cadastrado com Sucesso! "+
+      	"<?php echo $$usuario;?> Cadastrado Com Sucesso");
+      
+
+    location.href="../SICAR/SICAR - PC (Administrador)/cadastrar-usuarios.php"
+    </script>
+</html>
 ?>
 
 </body>

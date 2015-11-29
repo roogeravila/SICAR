@@ -1,4 +1,11 @@
-﻿
+﻿<!DOCTYPE html>
+<html>
+
+    
+<body>
+
+</body>
+
 
 <?php
 
@@ -6,8 +13,6 @@ date_default_timezone_set('America/Belem');
 
 // Inclui o arquivo de configuração do sistema (Conexão com o Banco de Dados)
 include "../Config/config_sistema.php";
-
-
 
 
 // Receber dados do Formulário --Novo Requerimento--
@@ -35,7 +40,10 @@ $data = date('dmy');
 $hora = date('Hms');
 $req_protocolo =  $data.$hora;
 
-echo "Seu Número de Protocolo é: ".$req_protocolo;
+//echo "Seu Número de Protocolo é: ".$req_protocolo;
+
+
+
 
 // Salva Anexo e Busca o endereço
 
@@ -55,11 +63,15 @@ if ($arqError == 0) {
 $query = mysql_query("INSERT INTO requerimento (req_protocolo,req_faculdade,req_tipo, req_nome,req_matricula,req_email,req_cpf,req_telefone,req_observacao,req_anexo,req_status) VALUES ('$req_protocolo','$req_faculdade','$req_tipo','$req_nome','$req_matricula','$req_email','$req_cpf','$req_telefone','$req_observacao','$req_end_anexo','$req_status')") or die(mysql_error());
 
 
-echo "Requerimento Enviado <br>" ;
-echo "<a href='NovoRequerimento.php'>Retornar</a>"; 
-
-
-
-
+//echo "Requerimento Enviado <br>" ;
+//echo "<a href='NovoRequerimento.php'>Retornar</a>"; 
 
 ?>
+<script type="text/javascript">
+      alert("Requerimento Cadastrado com Sucesso! \n"+
+      	"Seu Número de Protocolo é: <?php echo $req_protocolo;?>");
+      
+
+    location.href="NovoRequerimento.php"
+    </script>
+</html>
