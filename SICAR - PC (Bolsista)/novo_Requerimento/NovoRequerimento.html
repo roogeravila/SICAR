@@ -51,7 +51,7 @@
       <td><select name="faculdade"> 
     <option>Sem Vínculo</option>
     <?php 
-	require '../Config/config_sistema.php';
+	require '/../Config/config_sistema.php';
 	$query = mysql_query("SELECT * FROM faculdade");
 	while($esp = mysql_fetch_array($query)) { ?>
  	<option value="<?php echo $esp['id_faculdade']?>"> <?php echo $esp['nome'] ?></option>

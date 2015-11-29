@@ -46,13 +46,13 @@ if($campos != 0) {
 			$_SESSION['senha_usuario'] = $senha;
 			
 			if((mysql_result($consulta,0,"cargo"))==1) // Buscando pelo Diretor
-			header("Location: SICAR - PC (Direcao)/inicio.html");
+			header("Location: SICAR - PC (Direcao)\inicio.php?login=$login");
 			
 			if((mysql_result($consulta,0,"cargo"))==2) // Buscando pelo Secretario
-			header("Location: SICAR - PC (Secretaria)/inicio.html");
+			header("Location: SICAR - PC (Secretaria)\inicio.php?login=$login");
 			
 			if((mysql_result($consulta,0,"cargo"))==0) // Buscando pelo Bolsista
-			header("Location: SICAR - PC (Bolsista)/inicio.html");
+			header("Location: SICAR - PC (Bolsista)\inicio.php?login=$login");
 		}
 } else {
 	echo "<font color=red><b>

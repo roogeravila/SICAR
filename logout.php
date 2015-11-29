@@ -9,5 +9,5 @@ $_SESSION = array(); // colocando a session com um array vazio faz com ela
 session_destroy();
 
 // redireciona o link para a home page a pagina "index.php"
-header("Location: ../SICAR/SICAR - Login/login.html");
+header("Location: ..\SICAR\SICAR - Login\login.html");
 ?>

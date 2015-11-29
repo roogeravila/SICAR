@@ -4,8 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <link rel="stylesheet" href="style_tabela.css" media="screen">
-
+    <link rel="stylesheet" href="style.css" media="screen">
+    <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+    <link rel="stylesheet" href="style.responsive.css" media="all">
     
 <title>Lista de Usuários</title>
 </head>
@@ -18,23 +19,30 @@ $sql="SELECT * FROM usuario WHERE cargo='0'";
 $result = mysql_query($sql);
 echo 'Listagem de Usuários - Bolsistas';
 	
-	echo '<table style="width:100%" border="1" >';
-	echo '<tr>
-				<td style="width:5%">ID</td>
-				<td style="width:15%">Nome</td>
-				<td style="width:15%">Faculdade</td>
-				<td style="width:20%">Matrícula/SIAPE</td>
-				<td style="width:15%">Email</td>
-				<td style="width:10%">Telefone</td>
-				<td style="width:10%">Ações</td>
+	echo '<table style="width:72%" border="0" >';
+	echo '<tr bgcolor="#CCCCCC">
+				<td style="width:1%"><center>ID</center></td>
+				<td style="width:15%"><center>Nome</center></td>
+				<td style="width:10%"><center>Faculdade</center></td>
+				<td style="width:5%"><center>Matrícula/SIAPE</center></td>
+				<td style="width:15%"><center>Email</center></td>
+				<td style="width:10%"><center>Telefone</center></td>
+				<td style="width:1%"><center>Ações</center></td>
 			</tr>';
 	
 	while($row = mysql_fetch_array($result))
 	{
+				$faculdade=$row['faculdade'];
+
+
+$sql_faculdade="SELECT * FROM faculdade WHERE id_faculdade='$faculdade'";
+$result_faculdade = mysql_query($sql_faculdade);
+$row_faculdade = mysql_fetch_array($result_faculdade);
+		
 	  echo "<tr>
 				<td>".$row['id_usuario']."</td>
 				<td>". $row['nome']. "</td>
-				<td>". $row['faculdade']. "</td>
+				<td>". $row_faculdade['nome']. "</td>
 				<td>". $row['matricula_ufpa']. "</td>
 				<td>". $row['email']. "</td>
 				<td>". $row['telefone']. "</td>
@@ -50,23 +58,31 @@ echo 'Listagem de Usuários - Bolsistas';
 $result = mysql_query($sql);
 echo '<br><br>Listagem de Usuários - Diretores';
 	
-	echo '<table style="width:100%" border="1" >';
-	echo '<tr>
-				<td style="width:5%">ID</td>
-				<td style="width:15%">Nome</td>
-				<td style="width:15%">Faculdade</td>
-				<td style="width:20%">Matrícula/SIAPE</td>
-				<td style="width:15%">Email</td>
-				<td style="width:10%">Telefone</td>
-				<td style="width:10%">Ações</td>
+		echo '<table style="width:72%" border="0" >';
+	echo '<tr bgcolor="#CCCCCC">
+				<td style="width:1%"><center>ID</center></td>
+				<td style="width:15%"><center>Nome</center></td>
+				<td style="width:10%"><center>Faculdade</center></td>
+				<td style="width:5%"><center>Matrícula/SIAPE</center></td>
+				<td style="width:15%"><center>Email</center></td>
+				<td style="width:10%"><center>Telefone</center></td>
+				<td style="width:1%"><center>Ações</center></td>
 			</tr>';
 	
 	while($row = mysql_fetch_array($result))
 	{
+		
+		$faculdade=$row['faculdade'];
+
+
+$sql_faculdade="SELECT * FROM faculdade WHERE id_faculdade='$faculdade'";
+$result_faculdade = mysql_query($sql_faculdade);
+$row_faculdade = mysql_fetch_array($result_faculdade);
+		
 	  echo "<tr>
 				<td>".$row['id_usuario']."</td>
 				<td>". $row['nome']. "</td>
-				<td>". $row['faculdade']. "</td>
+				<td>". $row_faculdade['nome']. "</td>
 				<td>". $row['matricula_ufpa']. "</td>
 				<td>". $row['email']. "</td>
 				<td>". $row['telefone']. "</td>
@@ -84,23 +100,30 @@ echo '<br><br>Listagem de Usuários - Diretores';
 $result = mysql_query($sql);
 echo '<br><br>Listagem de Usuários - Secretários';
 	
-	echo '<table style="width:100%" border="1" >';
-	echo '<tr>
-				<td style="width:5%">ID</td>
-				<td style="width:15%">Nome</td>
-				<td style="width:15%">Faculdade</td>
-				<td style="width:20%">Matrícula/SIAPE</td>
-				<td style="width:15%">Email</td>
-				<td style="width:10%">Telefone</td>
-				<td style="width:10%">Ações</td>
+		echo '<table style="width:72%" border="0" >';
+	echo '<tr bgcolor="#CCCCCC">
+				<td style="width:1%"><center>ID</center></td>
+				<td style="width:15%"><center>Nome</center></td>
+				<td style="width:10%"><center>Faculdade</center></td>
+				<td style="width:5%"><center>Matrícula/SIAPE</center></td>
+				<td style="width:15%"><center>Email</center></td>
+				<td style="width:10%"><center>Telefone</center></td>
+				<td style="width:1%"><center>Ações</center></td>
 			</tr>';
-	
 	while($row = mysql_fetch_array($result))
 	{
+		
+		$faculdade=$row['faculdade'];
+
+
+$sql_faculdade="SELECT * FROM faculdade WHERE id_faculdade='$faculdade'";
+$result_faculdade = mysql_query($sql_faculdade);
+$row_faculdade = mysql_fetch_array($result_faculdade);
+		
 	  echo "<tr>
 				<td>".$row['id_usuario']."</td>
 				<td>". $row['nome']. "</td>
-				<td>". $row['faculdade']. "</td>
+				<td>". $row_faculdade['nome']. "</td>
 				<td>". $row['matricula_ufpa']. "</td>
 				<td>". $row['email']. "</td>
 				<td>". $row['telefone']. "</td>

@@ -18,14 +18,14 @@ $sql="SELECT * FROM faculdade";
 $result = mysql_query($sql);
 echo 'Listagem de Faculdades';
 	
-	echo '<table style="width:72%" border="1" >';
-	echo '<tr>
-				<td style="width:3%">ID</td>
-				<td style="width:18%">Nome da Faculdade</td>
-				<td style="width:10%">Diretor</td>
-				<td style="width:5%">Telefone/Ramal/SIAPE</td>
-				<td style="width:10%">Email</td>
-				<td style="width:10%">Ações</td>
+	echo '<table style="width:72%" border="0"  >';
+	echo '<tr bgcolor="#CCCCCC">
+				<td style="width:3%"><center>ID</center></td>
+				<td style="width:18%"><center>Nome da Faculdade</center></td>
+				<td style="width:10%"><center>Diretor</center></td>
+				<td style="width:5%"><center>Telefone/Ramal</center></td>
+				<td style="width:10%"><center>Email</center></td>
+				<td style="width:10%"><center>Ações</center></td>
 			</tr>';
 	
 	while($row = mysql_fetch_array($result))

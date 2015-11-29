@@ -41,17 +41,7 @@
                     <div class="art-content-layout-row">
                         <div class="art-layout-cell art-sidebar1 clearfix"><div class="art-vmenublock clearfix">
         <div class="art-vmenublockcontent">
-<ul class="art-vmenu">
-    <li><a href="inicio.html">Início</a></li>
-    <li><a href="novo-requerimento.html" class="active">Novo Requerimento</a></li>
-    <li><a href="consultar-requerimentos.html">Consultar Requerimentos</a></li>
-    <li><a href="excluir-requerimento.html">Excluir Requerimento</a></li>
-    <li><a href="dados-pessoais.html">Dados Pessoais</a></li><li><a href=		"cadastrar-faculdade.html">Cadastrar Faculdade</a></li>
-    <li><a href="excluir-faculdade.html">Excluir Faculdade</a></li>
-    <li><a href="excluir-usuarios.html">Excluir Usuários</a></li>
-    <li><a href="cadastrar-usuarios.php">Cadastrar Usuários</a></li>
-    <li><a href="alterar-usuarios.html">Alterar Usuários</a></li>
-</ul>
+<ul class="art-vmenu"><li><a href="inicio.html">Início</a></li><li><a href="novo-requerimento.html" class="active">Novo Requerimento</a></li><li><a href="consultar-requerimentos.html">Consultar Requerimentos</a></li><li><a href="excluir-requerimento.html">Excluir Requerimento</a></li><li><a href="dados-pessoais.html">Dados Pessoais</a></li><li><a href="cadastrar-faculdade.html">Cadastrar Faculdade</a></li><li><a href="excluir-faculdade.html">Excluir Faculdade</a></li><li><a href="excluir-usuarios.html">Excluir Usuários</a></li><li><a href="cadastrar-usuarios.php">Cadastrar Usuários</a></li><li><a href="alterar-usuarios.html">Alterar Usuários</a></li></ul>
                 
         </div>
 </div><div class="art-block clearfix">

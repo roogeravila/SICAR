@@ -13,6 +13,9 @@
     <script src="jquery.js"></script>
     <script src="script.js"></script>
     <script src="script.responsive.js"></script>
+    
+
+
 
 
 <style>.art-content .art-postcontent-0 .layout-item-0 { margin-bottom: 5px;  }
@@ -54,8 +57,9 @@
         <center><table width="200" border="1">
   <tbody>
     <tr>
+    <form name="consulta" action="resultadosRequerimentos_protocolo.php" method="post">
       <td><span style="color: rgb(52, 71, 76); font-size: 14px;">Protocolo:</td>
-      <td><input type="text"></td>
+      <td><input type="text" name="protocolo"></td>
     </tr>
     <tr>
       <td></td>
@@ -63,13 +67,14 @@
     </tr>
     <tr>
       <td><center><span style="color: rgb(52, 71, 76); font-size: 14px;">CPF:</</td>
-      <td><input type="text"></span></td>
+      <td><input type="text" name="cpf"></span></td>
     </tr>
   </tbody>
-</table> </center>
+</table> </center><br>
+  <input name="enviar" value="Consultar" type="submit" class="art-button">  <input name="limpar" value="Limpar" type="reset" class="art-button">
+  </form>
 
         
-        <br><a href="#" class="art-button">Consultar</a>&nbsp;<a href="" class="art-button">Limpar</a>&nbsp;</h3>
         <h3 style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(180, 198, 202); padding-bottom: 5px; text-align: left;"><a href="../index.html" style="font-size: 11px;">Voltar</a><span style="font-size: 11px;"></span></h3>
     </div>
     </div>
