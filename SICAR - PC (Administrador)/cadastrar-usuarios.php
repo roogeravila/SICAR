@@ -28,41 +28,25 @@ return false;
 </script><script type="text/javascript" src="js/jquery.maskedinput-1.1.4.pack.js"/></script>
 
 <script>
-function ValidarCPF(cpf) {  
-    cpf = cpf.replace(/[^\d]+/g,'');    
-    if(cpf == '') return false; 
-    // Elimina CPFs invalidos conhecidos    
-    if (cpf.length != 11 || 
-        cpf == "00000000000" || 
-        cpf == "11111111111" || 
-        cpf == "22222222222" || 
-        cpf == "33333333333" || 
-        cpf == "44444444444" || 
-        cpf == "55555555555" || 
-        cpf == "66666666666" || 
-        cpf == "77777777777" || 
-        cpf == "88888888888" || 
-        cpf == "99999999999")
-            return false;       
-    // Valida 1o digito 
-    add = 0;    
-    for (i=0; i < 9; i ++)       
-        add += parseInt(cpf.charAt(i)) * (10 - i);  
-        rev = 11 - (add % 11);  
-        if (rev == 10 || rev == 11)     
-            rev = 0;    
-        if (rev != parseInt(cpf.charAt(9)))     
-            return false;       
-    // Valida 2o digito 
-    add = 0;    
-    for (i = 0; i < 10; i ++)        
-        add += parseInt(cpf.charAt(i)) * (11 - i);  
-    rev = 11 - (add % 11);  
-    if (rev == 10 || rev == 11) 
-        rev = 0;    
-    if (rev != parseInt(cpf.charAt(10)))
-        return false;       
-    return true;   
+function ValidarCPF(Objcpf){
+        var cpf = Objcpf.value;
+        exp = /\.|\-/g
+        cpf = cpf.toString().replace( exp, "" ); 
+        var digitoDigitado = eval(cpf.charAt(9)+cpf.charAt(10));
+        var soma1=0, soma2=0;
+        var vlr =11;
+
+        for(i=0;i<9;i++){
+                soma1+=(cpf.charAt(i)*(vlr-1));
+                soma2+=(cpf.charAt(i)*vlr);
+                vlr--;
+        }       
+        soma1 = (((soma1*10)%11)==10 ? 0:((soma1*10)%11));
+        soma2=(((soma2+(2*soma1))*10)%11);
+
+        var digitoGerado=(soma1*10)+soma2;
+        if(digitoGerado!=digitoDigitado)        
+                alert('CPF Invalido!');         
 }
  </script>
  
