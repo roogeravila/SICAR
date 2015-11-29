@@ -2,6 +2,8 @@
 
 <?php
 
+date_default_timezone_set('America/Belem');
+
 // Inclui o arquivo de configuração do sistema (Conexão com o Banco de Dados)
 include "../Config/config_sistema.php";
 
@@ -30,8 +32,10 @@ $req_status= 1;
 
 // Atribuindo Protocolo para este Requerimento
 $data = date('dmy');
-$hora = date('His');
+$hora = date('Hms');
 $req_protocolo =  $data.$hora;
+
+echo "Seu Número de Protocolo é: ".$req_protocolo;
 
 // Salva Anexo e Busca o endereço
 
@@ -48,7 +52,7 @@ if ($arqError == 0) {
 
   
 //Salvando Informações no Banco de Dados
-$query = mysql_query("INSERT INTO requerimento (req_protocolo,req_faculdade,req_tipo, req_nome,req_matricula,req_email,req_cpf,req_telefone,req_observacao,req_anexo) VALUES ('$req_protocolo','$req_faculdade','$req_tipo','$req_nome','$req_matricula','$req_email','$req_cpf','$req_telefone','$req_observacao','$req_end_anexo')") or die(mysql_error());
+$query = mysql_query("INSERT INTO requerimento (req_protocolo,req_faculdade,req_tipo, req_nome,req_matricula,req_email,req_cpf,req_telefone,req_observacao,req_anexo,req_status) VALUES ('$req_protocolo','$req_faculdade','$req_tipo','$req_nome','$req_matricula','$req_email','$req_cpf','$req_telefone','$req_observacao','$req_end_anexo','$req_status')") or die(mysql_error());
 
 
 echo "Requerimento Enviado <br>" ;
